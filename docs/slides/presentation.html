@@ -874,10 +874,10 @@
           <span class="kicker">Hệ thống · Layer BE</span>
           <h2 style="font-size:1.3rem; margin-bottom:.5rem">Layer BE (ECS Fargate + SQS)</h2>
           
-          <div style="text-align: center; margin-top: 1rem;">
-            <img src="../diagrams/budgetbot_aws_infrastructure-Diagram_Nhat.jpg" alt="Compute Data Layer" style="max-height: 380px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);"/>
+          <div style="text-align: center; margin-top: 0.5rem;">
+            <img src="../diagrams/budgetbot_aws_infrastructure-Diagram_Nhat.jpg" alt="Compute Data Layer" style="max-height: 460px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);"/>
           </div>
-          <ul class="bullets" style="margin-top: 1rem; font-size: 0.9rem; text-align: left; display: inline-block;">
+          <ul class="bullets" style="margin-top: 0.8rem; font-size: 0.9rem; text-align: left; display: inline-block;">
             <li><b>Tại sao chọn ECS Fargate thay vì Lambda?</b> AI Inference là bài toán chạy rất lâu (Long-running task). Fargate mang lại mức Dự báo chi phí (Cost Predictability) tối ưu nhất ở quy mô lớn.</li>
             <li><b>Xử lý File sao kê khổng lồ:</b> Kiến trúc Async. API đẩy việc vào SQS -> Fargate Worker âm thầm xử lý, không block UI.</li>
             <li><b>Dữ liệu:</b> RDS PostgreSQL (Trữ liệu an toàn) & ElastiCache Valkey (Rate limiting).</li>
@@ -888,7 +888,7 @@
       <!-- 13 · DATA INTEGRITY -->
       <section>
         <div class="slide-pad center">
-          <span class="kicker">Hệ thống · Layer DB (Data Integrity)</span>
+          <span class="kicker">Hệ thống · Layer Data Processing (Data Integrity)</span>
           <h2 style="font-size:1.35rem; margin-bottom:.8rem">Lặp dòng nạp vào = Tiền sai.</h2>
           <div class="steps" style="max-width:92%">
             <div class="step"><span class="no"></span><span class="tx"><b>Tình huống thực tế:</b> <span>Sao kê tháng này chồng lên tháng trước -> Tiêu 1 triệu bị tính thành 2 triệu. User chửi app ngay lập tức.</span></span></div>
