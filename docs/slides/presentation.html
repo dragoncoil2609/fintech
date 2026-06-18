@@ -892,7 +892,7 @@
           <h2 style="font-size:1.35rem; margin-bottom:.8rem">Lặp dòng nạp vào = Tiền sai.</h2>
           <div class="steps" style="max-width:92%">
             <div class="step"><span class="no"></span><span class="tx"><b>Tình huống thực tế:</b> <span>Sao kê tháng này chồng lên tháng trước -> Tiêu 1 triệu bị tính thành 2 triệu. User chửi app ngay lập tức.</span></span></div>
-            <div class="step"><span class="no"></span><span class="tx"><b>Giải pháp Dedup 4 lớp khắt khe:</b> <span>VD: 2 giao dịch trùng [Ngày+Giờ+Số tiền] = 1. Xử lý triệt để cả lỗi Hoàn tiền (Refund) và Date tolerance.</span></span></div>
+            <div class="step"><span class="no"></span><span class="tx"><b>Giải pháp Dedup 4 cấp độ:</b> <span>Chặn trùng file (File Hash), gộp dòng trùng (Fingerprint + Date tolerance), cảnh báo nhập tay (Soft warning) và chống trùng hoá đơn (PDF Receipt).</span></span></div>
             <div class="step"><span class="no"></span><span class="tx"><b>Data Privacy Guarantee:</b> <span>File sao kê chỉ lưu trên S3 (Encrypted) và tự động xoá vĩnh viễn sau 1 giờ (Retention Policy).</span></span></div>
           </div>
           <p class="muted sm" style="margin-top:1.5rem">Hạ tầng xịn đến đâu, nếu thuật toán sai thì Business vẫn sập. Chúng tôi scope độc lập theo <span class="mono">user_id</span> kết hợp sức mạnh Isolation của Cognito.</p>
