@@ -755,7 +755,7 @@
             <div class="it"><span class="mm" style="color:var(--income)">B</span><span class="lb"><b>FinTech</b><br/><span>AI Money Coach (Trợ lý tài chính)</span></span></div>
             <div class="it" style="opacity:0.4"><span class="mm">C</span><span class="lb"><b>ProductivityTech</b><br/><span>AI Document Hub (Trợ lý tài liệu)</span></span></div>
           </div>
-          <p class="muted" style="margin-top:2rem; max-width:44ch">Vì sao chọn FinTech? Dữ liệu cho thấy <b>hơn 70% người trẻ</b> mất kiểm soát chi tiêu hàng tháng. Tại sao không khuyên dùng các app quản lý hiện có? Vì chúng bắt người dùng phải <b>nhập tay thủ công</b>. Chúng tôi chọn hướng đi khác: <b>Tự động hoá 100% bằng AI.</b></p>
+          <p class="muted" style="margin-top:2rem; max-width:44ch">Vì sao chọn FinTech? Dữ liệu cho thấy <b>phần lớn người trẻ</b> mất kiểm soát chi tiêu hàng tháng. Tại sao không khuyên dùng các app quản lý hiện có? Vì chúng bắt người dùng phải <b>nhập tay thủ công</b>. Chúng tôi chọn hướng đi khác: <b>Tự động hoá 100% bằng AI.</b></p>
         </div>
         <aside class="notes">
           Nhắc lại 3 đề tài. Tập trung vào B.
@@ -1038,7 +1038,7 @@
         <div class="slide-pad center">
           <span class="kicker">Call to Action</span>
           <div class="qr-wrap">
-            <div id="qrcode"></div>
+            <img src="../diagrams/qr_budgetbot_real.png" alt="Scan to visit repo" style="width: 190px; height: 190px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);"/>
             <div>
               <h2 style="font-size:1.7rem; margin-bottom:.3rem">github.com/<span class="amber">dragoncoil2609</span>/fintech</h2>
               <p class="muted sm">Quét QR trải nghiệm repo của team. Tải source, xem Architecture Diagrams.</p>
@@ -1098,12 +1098,7 @@
     });
     deck.initialize().then(() => {
       renderMermaid(deck.getCurrentSlide());   // current slide on load
-      try {
-        new QRCode(document.getElementById('qrcode'), {
-          text: 'https://github.com/nghiadaulau/budgetbot', width: 190, height: 190,
-          colorDark: '#0F172A', colorLight: '#ffffff', correctLevel: QRCode.CorrectLevel.M
-        });
-      } catch (e) { }
+      // QR code has been replaced with static image
     });
     deck.on('slidechanged', e => renderMermaid(e.currentSlide));
     deck.on('ready', e => renderMermaid(e.currentSlide));
