@@ -858,12 +858,12 @@
       <section>
         <div class="slide-pad center">
           <span class="kicker">Hệ thống · Layer BE & Database</span>
-          <h2 style="font-size:1.3rem; margin-bottom:.5rem">Layer BE & Database (ECS Fargate + SQS + RDS)</h2>
+          <h2 style="font-size:1.6rem; margin-bottom:.5rem">Layer BE & Database (ECS Fargate + SQS + RDS)</h2>
           
           <div style="text-align: center; margin-top: 0.5rem;">
             <img src="../diagrams/budgetbot_aws_infrastructure-Diagram_Nhat.jpg" alt="Compute Data Layer" style="max-height: 460px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);"/>
           </div>
-          <ul class="bullets" style="margin-top: 0.8rem; font-size: 0.9rem; text-align: left; display: inline-block;">
+          <ul class="bullets" style="margin-top: 0.8rem; font-size: 1.15rem; text-align: left; display: inline-block; line-height: 1.6;">
             <li><b>Tại sao chọn ECS Fargate thay vì Lambda?</b> AI Inference là bài toán chạy rất lâu (Long-running task). Fargate mang lại mức Dự báo chi phí (Cost Predictability) tối ưu nhất ở quy mô lớn.</li>
             <li><b>Xử lý File sao kê khổng lồ:</b> Kiến trúc Async. API đẩy việc vào SQS -> Fargate Worker âm thầm xử lý, không block UI.</li>
             <li><b>Dữ liệu:</b> RDS PostgreSQL (Trữ liệu an toàn) & ElastiCache Valkey (Rate limiting).</li>
@@ -875,13 +875,23 @@
       <section>
         <div class="slide-pad center">
           <span class="kicker">Hệ thống · Data Processing & Integrity</span>
-          <h2 style="font-size:1.35rem; margin-bottom:.8rem">Lặp dòng nạp vào = Tiền sai.</h2>
+          <h2 style="font-size:1.6rem; margin-bottom:.8rem">Lặp dòng nạp vào = Tiền sai.</h2>
           <div class="steps" style="max-width:92%">
-            <div class="step"><span class="no"></span><span class="tx"><b>Tình huống thực tế:</b> <span>Sao kê tháng này chồng lên tháng trước -> Tiêu 1 triệu bị tính thành 2 triệu. User chửi app ngay lập tức.</span></span></div>
-            <div class="step"><span class="no"></span><span class="tx"><b>Giải pháp Dedup 4 cấp độ:</b> <span>Chặn trùng file (File Hash), gộp dòng trùng (Fingerprint + Date tolerance), cảnh báo nhập tay (Soft warning) và chống trùng hoá đơn (PDF Receipt).</span></span></div>
-            <div class="step"><span class="no"></span><span class="tx"><b>Data Privacy Guarantee:</b> <span>File sao kê chỉ lưu trên S3 (Encrypted) và tự động xoá vĩnh viễn sau 1 giờ (Retention Policy).</span></span></div>
+            <div class="step"><span class="no"></span><span class="tx" style="font-size: 1.15rem;"><b>Tình huống thực tế:</b> <span>Sao kê tháng này chồng lên tháng trước -> Tiêu 1 triệu bị tính thành 2 triệu. User chửi app ngay lập tức.</span></span></div>
+            <div class="step">
+              <span class="no"></span>
+              <span class="tx" style="font-size: 1.15rem;">
+                <b>Giải pháp Dedup 4 cấp độ:</b>
+                <ul style="margin-top: 0.4rem; font-size: 1.05rem; padding-left: 1.5rem; text-align: left; line-height: 1.6; list-style-type: disc;">
+                  <li><b>File Hash & PDF:</b> Chặn trùng lặp toàn file hoặc scan trùng hóa đơn.</li>
+                  <li><b>Transaction Fingerprint:</b> Dấu vân tay giao dịch + cơ chế lệch ngày (Date Tolerance).</li>
+                  <li><b>Soft Warning:</b> Cảnh báo mềm khi người dùng tự nhập tay trùng dữ liệu.</li>
+                </ul>
+              </span>
+            </div>
+            <div class="step"><span class="no"></span><span class="tx" style="font-size: 1.15rem;"><b>Data Privacy Guarantee:</b> <span>File sao kê chỉ lưu trên S3 (Encrypted) và tự động xoá vĩnh viễn sau 1 giờ (Retention Policy).</span></span></div>
           </div>
-          <p class="muted sm" style="margin-top:1.5rem">Hạ tầng xịn đến đâu, nếu thuật toán sai thì Business vẫn sập. Chúng tôi scope độc lập theo <span class="mono">user_id</span> kết hợp sức mạnh Isolation của Cognito.</p>
+          <p class="muted sm" style="margin-top:1.5rem; font-size: 1.05rem;">Hạ tầng xịn đến đâu, nếu thuật toán sai thì Business vẫn sập. Chúng tôi scope độc lập theo <span class="mono">user_id</span> kết hợp sức mạnh Isolation của Cognito.</p>
         </div>
         <aside class="notes">Bảo vệ integrity trước khi nhúng tay vào AI. Đây là nghiệp vụ ăn điểm tuyệt đối.</aside>
       </section>
