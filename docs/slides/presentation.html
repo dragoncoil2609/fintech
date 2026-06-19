@@ -1108,6 +1108,32 @@
     });
     // F fullscreen · S speaker · ESC overview · B blackout · ←/→ navigate — built into reveal.js
   </script>
+  <script>
+    window.addEventListener('load', () => {
+      document.addEventListener('mousemove', (e) => {
+        if (e.target.closest('a, button, input, select, textarea, .controls')) {
+          document.documentElement.style.cursor = 'default';
+          return;
+        }
+        if (e.clientX > window.innerWidth / 2) {
+          document.documentElement.style.cursor = 'e-resize';
+        } else {
+          document.documentElement.style.cursor = 'w-resize';
+        }
+      });
+
+      document.addEventListener('click', (e) => {
+        if (e.target.closest('a, button, input, select, textarea, .controls, .navigate-left, .navigate-right')) {
+          return;
+        }
+        if (e.clientX > window.innerWidth / 2) {
+          document.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowRight', keyCode: 39, which: 39, bubbles: true }));
+        } else {
+          document.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowLeft', keyCode: 37, which: 37, bubbles: true }));
+        }
+      });
+    });
+  </script>
 </body>
 
 </html>
