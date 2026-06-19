@@ -840,7 +840,7 @@
           <h2 style="font-size:1.4rem; margin-bottom:.5rem">Bức tranh toàn cảnh: AWS VPC Architecture</h2>
           
           <div style="text-align: center; margin-top: 1rem;">
-            <img src="../diagrams/aws_overall.png" alt="VPC Architecture" style="max-height: 400px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);"/>
+            <img src="../diagrams/aws_overall.png" alt="VPC Architecture" style="max-height: 480px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);"/>
           </div>
 
           <p class="muted" style="margin-top: 1.2rem; font-size: 1.1rem; line-height: 1.5;">
@@ -856,11 +856,11 @@
           <h2 style="font-size:1.35rem; margin-bottom:.8rem">Layer FE & Security</h2>
           <div class="cols cols-2" style="align-items: center; gap: 1rem;">
             <div>
-              <img src="../diagrams/aws_edge.jpg" alt="Edge Delivery" style="max-height: 250px; border-radius: 8px;"/>
+               <img src="../diagrams/aws_edge.jpg" alt="Edge Delivery" style="max-height: 280px; border-radius: 8px;"/>
               <p class="muted sm" style="margin-top:0.5rem">CloudFront S3 cho Frontend tĩnh siêu nhanh.</p>
             </div>
             <div>
-              <img src="../diagrams/aws_api.jpg" alt="API Entry" style="max-height: 250px; border-radius: 8px;"/>
+              <img src="../diagrams/aws_api.jpg" alt="API Entry" style="max-height: 280px; border-radius: 8px;"/>
               <p class="muted sm" style="margin-top:0.5rem">ALB + WAF bảo vệ mọi traffic API.</p>
             </div>
           </div>
@@ -906,7 +906,7 @@
           <span class="kicker">Hệ thống · Layer Monitoring</span>
           <h2 style="font-size:1.4rem; margin-bottom:.5rem">Observability: CloudWatch & SNS</h2>
           <div style="text-align: center; margin-top: 1rem;">
-            <img src="../diagrams/aws_observe.jpg" alt="Observability" style="max-height: 300px; border-radius: 8px;"/>
+            <img src="../diagrams/aws_observe.jpg" alt="Observability" style="max-height: 380px; border-radius: 8px;"/>
           </div>
           <p class="muted sm" style="margin-top:1.5rem"><b>Bài toán:</b> Backend sập hay SQS kẹt Job làm sao hay? <br/><b>Giải pháp:</b> Setup CloudWatch Metrics theo dõi Error Rate & Queue Depth -> Bắn Alarm tự động qua SNS (Email/Slack). Biết lỗi trước khi khách báo.</p>
         </div>
