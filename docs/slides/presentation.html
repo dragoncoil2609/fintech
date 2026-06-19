@@ -857,8 +857,8 @@
       <!-- 12 · COMPUTE & DATA LAYER -->
       <section>
         <div class="slide-pad center">
-          <span class="kicker">Hệ thống · Layer BE</span>
-          <h2 style="font-size:1.3rem; margin-bottom:.5rem">Layer BE (ECS Fargate + SQS)</h2>
+          <span class="kicker">Hệ thống · Layer BE & Database</span>
+          <h2 style="font-size:1.3rem; margin-bottom:.5rem">Layer BE & Database (ECS Fargate + SQS + RDS)</h2>
           
           <div style="text-align: center; margin-top: 0.5rem;">
             <img src="../diagrams/budgetbot_aws_infrastructure-Diagram_Nhat.jpg" alt="Compute Data Layer" style="max-height: 460px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);"/>
@@ -874,7 +874,7 @@
       <!-- 13 · DATA INTEGRITY -->
       <section>
         <div class="slide-pad center">
-          <span class="kicker">Hệ thống · Layer Data Processing (Data Integrity)</span>
+          <span class="kicker">Hệ thống · Data Processing & Integrity</span>
           <h2 style="font-size:1.35rem; margin-bottom:.8rem">Lặp dòng nạp vào = Tiền sai.</h2>
           <div class="steps" style="max-width:92%">
             <div class="step"><span class="no"></span><span class="tx"><b>Tình huống thực tế:</b> <span>Sao kê tháng này chồng lên tháng trước -> Tiêu 1 triệu bị tính thành 2 triệu. User chửi app ngay lập tức.</span></span></div>
