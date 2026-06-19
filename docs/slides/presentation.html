@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en" data-theme="dark">
 
 <head>
@@ -912,46 +912,6 @@
         </div>
       </section>
 
-      <!-- 15 · THE NUMBERS (THÀNH QUẢ) -->
-      <section>
-        <div class="slide-pad center">
-          <span class="kicker">Thành quả kỹ thuật</span>
-          <div class="stat-grid">
-            <div class="stat"><div class="num">4,803</div><div class="lbl">LOC backend (src/)</div><div class="sub">+1,313 LOC test</div></div>
-            <div class="stat"><div class="num">118<span class="muted" style="font-size:.5em"> / 78%</span></div><div class="lbl">tests pass · coverage</div><div class="sub">Store-parity test</div></div>
-            <div class="stat"><div class="num">92%</div><div class="lbl">AI Accuracy</div><div class="sub">đã test trên 1,000+ giao dịch thật</div></div>
-            <div class="stat"><div class="num">20</div><div class="lbl">Terraform files</div><div class="sub">Deploy 1-click lên AWS</div></div>
-          </div>
-          <p class="muted sm" style="margin-top:1.5rem">Đây không phải là một "vỏ" hackathon. Đây là một hệ thống <b>Production-ready</b> với đầy đủ IaC, Test coverage và Monitor.</p>
-        </div>
-      </section>
-
-      <!-- 16 · TESTING & QUALITY -->
-      <section>
-        <div class="slide-pad center">
-          <span class="kicker">Quality</span>
-          <h2 style="font-size:1.3rem; margin-bottom:.8rem">Build nhanh ≠ build ẩu.</h2>
-          <div class="cols cols-3">
-            <div class="card">
-              <div class="lead">118</div>
-              <h3>tests pass</h3>
-              <p>1,313 LOC test · 78% coverage · 11 skip (cần AWS).</p>
-            </div>
-            <div class="card">
-              <div class="lead">5×</div>
-              <h3>store-parity</h3>
-              <p>Cùng một bộ test chạy qua <b>cả 5 DB adapters</b> — interface giống nhau được chứng minh.</p>
-            </div>
-            <div class="card">
-              <div class="lead">Safe</div>
-              <h3>Pydantic Models</h3>
-              <p>Ép kiểu dữ liệu (Data Validation) nghiêm ngặt ở cả đầu vào API và đầu ra của AI.</p>
-            </div>
-          </div>
-          <p class="muted sm" style="margin-top:1rem">Test ép backend local (SQLite/LocalAI) — chạy offline, không chạm AWS, không tốn tiền.</p>
-        </div>
-      </section>
-
       <!-- 17 · TRANSITION TO AI (NEW SLIDE) -->
       <section data-background-color="#131F38">
         <div class="slide-pad center">
@@ -1008,6 +968,46 @@
             <span>Surface: <b class="mono">/admin/cost-report</b></span>
           </div>
           <p class="muted sm" style="margin-top:.8rem">Cost-aware từ ngày 0 — quản trị hoàn toàn chi phí của từng model.</p>
+        </div>
+      </section>
+
+      <!-- 15 · THE NUMBERS (THÀNH QUẢ) -->
+      <section>
+        <div class="slide-pad center">
+          <span class="kicker">Thành quả kỹ thuật</span>
+          <div class="stat-grid">
+            <div class="stat"><div class="num">4,803</div><div class="lbl">LOC backend (src/)</div><div class="sub">+1,313 LOC test</div></div>
+            <div class="stat"><div class="num">118<span class="muted" style="font-size:.5em"> / 78%</span></div><div class="lbl">tests pass · coverage</div><div class="sub">Store-parity test</div></div>
+            <div class="stat"><div class="num">92%</div><div class="lbl">AI Accuracy</div><div class="sub">đã test trên 1,000+ giao dịch thật</div></div>
+            <div class="stat"><div class="num">20</div><div class="lbl">Terraform files</div><div class="sub">Deploy 1-click lên AWS</div></div>
+          </div>
+          <p class="muted sm" style="margin-top:1.5rem">Đây không phải là một "vỏ" hackathon. Đây là một hệ thống <b>Production-ready</b> với đầy đủ IaC, Test coverage và Monitor.</p>
+        </div>
+      </section>
+
+      <!-- 16 · TESTING & QUALITY -->
+      <section>
+        <div class="slide-pad center">
+          <span class="kicker">Quality</span>
+          <h2 style="font-size:1.3rem; margin-bottom:.8rem">Build nhanh ≠ build ẩu.</h2>
+          <div class="cols cols-3">
+            <div class="card">
+              <div class="lead">118</div>
+              <h3>tests pass</h3>
+              <p>1,313 LOC test · 78% coverage · 11 skip (cần AWS).</p>
+            </div>
+            <div class="card">
+              <div class="lead">5×</div>
+              <h3>store-parity</h3>
+              <p>Cùng một bộ test chạy qua <b>cả 5 DB adapters</b> — interface giống nhau được chứng minh.</p>
+            </div>
+            <div class="card">
+              <div class="lead">Safe</div>
+              <h3>Pydantic Models</h3>
+              <p>Ép kiểu dữ liệu (Data Validation) nghiêm ngặt ở cả đầu vào API và đầu ra của AI.</p>
+            </div>
+          </div>
+          <p class="muted sm" style="margin-top:1rem">Test ép backend local (SQLite/LocalAI) — chạy offline, không chạm AWS, không tốn tiền.</p>
         </div>
       </section>
 
