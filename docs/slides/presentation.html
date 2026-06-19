@@ -901,8 +901,8 @@
       <!-- 17 · TRANSITION TO AI (NEW SLIDE) -->
       <section data-background-color="#131F38">
         <div class="slide-pad center">
-          <p class="hero-q" style="max-width:100%">Vậy trái tim của hệ thống này,<br/>bộ não <span class="income">AI Money Coach</span>,<br/>hoạt động như thế nào?</p>
-          <span class="sig" style="display:block; margin-top:2rem; font-family:var(--mono); color:var(--accent); font-size:1.2rem;">Phần 3: Deep Dive AI</span>
+          <p class="hero-q" style="max-width:100%; font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.2;">Vậy trái tim của hệ thống này,<br/>bộ não <span class="income" style="text-shadow: 0 0 20px rgba(52, 211, 153, 0.4);">AI Money Coach</span>,<br/>hoạt động như thế nào?</p>
+          <span class="sig" style="display:block; margin-top:3rem; font-family:var(--mono); color:var(--accent); font-size:1.6rem; letter-spacing: 0.1em; text-transform: uppercase;">Phần 3: Deep Dive AI</span>
         </div>
         <aside class="notes">Đây là lúc chuyển mic cho người phụ trách mảng AI.</aside>
       </section>
@@ -910,50 +910,50 @@
       <!-- 18 · HYBRID AI -->
       <section>
         <div class="slide-pad center">
-          <span class="kicker">Phần 3 · Cách làm AI</span>
-          <h2 style="font-size:1.35rem; margin-bottom:.9rem">Hybrid AI Pipeline: Parse OCR → Classify → Summarize.</h2>
-          <div class="flow">
-            <div class="node good"><div class="t">1 · Keyword (Offline)</div><div class="d">Khớp tức thì Grab, Shopee, EVN. <b style="color:var(--income)">$0 · 65% dữ liệu</b></div></div>
-            <div class="arrow">→</div>
-            <div class="node warn"><div class="t">2 · Bedrock Haiku 4.5</div><div class="d">Chỉ dòng <b>mơ hồ</b> mới gọi LLM siêu rẻ.</div></div>
-            <div class="arrow">→</div>
-            <div class="node fall"><div class="t">3 · LocalAI fallback</div><div class="d">Bedrock lỗi? Tự rớt về Local, hệ thống <b>không bao giờ sập.</b></div></div>
+          <span class="kicker" style="font-size: 1.2rem; margin-bottom: 1.5rem;">Phần 3 · Cách làm AI</span>
+          <h2 style="font-size: clamp(2rem, 4.5vw, 3.5rem); margin-bottom: 2.5rem; line-height: 1.2;">Hybrid AI Pipeline: Parse OCR → Classify → Summarize.</h2>
+          <div class="flow" style="gap: 1.5rem;">
+            <div class="node good" style="padding: 1.8rem; border-width: 2px;"><div class="t" style="font-size: 1.4rem; margin-bottom: 0.8rem;">1 · Keyword (Offline)</div><div class="d" style="font-size: 1.1rem; line-height: 1.4;">Khớp tức thì Grab, Shopee, EVN.<br/><b style="color:var(--income); font-size: 1.2rem;">$0 · 65% dữ liệu</b></div></div>
+            <div class="arrow" style="font-size: 2.5rem;">→</div>
+            <div class="node warn" style="padding: 1.8rem; border-width: 2px;"><div class="t" style="font-size: 1.4rem; margin-bottom: 0.8rem;">2 · Bedrock Haiku 4.5</div><div class="d" style="font-size: 1.1rem; line-height: 1.4;">Chỉ dòng <b>mơ hồ</b> mới gọi LLM siêu rẻ.</div></div>
+            <div class="arrow" style="font-size: 2.5rem;">→</div>
+            <div class="node fall" style="padding: 1.8rem; border-width: 2px;"><div class="t" style="font-size: 1.4rem; margin-bottom: 0.8rem;">3 · LocalAI fallback</div><div class="d" style="font-size: 1.1rem; line-height: 1.4;">Bedrock lỗi? Tự rớt về Local,<br/>hệ thống <b>không bao giờ sập.</b></div></div>
           </div>
-          <p class="muted sm" style="margin-top:1.5rem">Truy vấn tự nhiên qua <b>Text-to-SQL</b> kèm Guardrail nghiêm ngặt chống SQL Injection. Tối ưu chi phí: Kết hợp Keyword (miễn phí) xử lý 65% dữ liệu, chỉ dùng Claude Haiku cho 35% còn lại.</p>
+          <p class="muted" style="margin-top: 2.5rem; font-size: 1.2rem; line-height: 1.6; max-width: 100%; text-align: center;">Truy vấn tự nhiên qua <b>Text-to-SQL</b> kèm Guardrail nghiêm ngặt chống SQL Injection. Tối ưu chi phí: Kết hợp Keyword (miễn phí) xử lý 65% dữ liệu, chỉ dùng Claude Haiku cho 35% còn lại.</p>
         </div>
       </section>
 
       <!-- 19 · PROMPT DESIGN -->
       <section>
         <div class="slide-pad center">
-          <span class="kicker">Phần 3 · Kỹ thuật Prompting</span>
-          <h2 style="font-size:1.3rem; margin-bottom:.6rem">Single-shot · Few-shot · JSON-only.</h2>
-          <div class="quote"><span class="k">SYSTEM</span> Vietnamese transaction categorizer → exactly one of:
+          <span class="kicker" style="font-size: 1.2rem; margin-bottom: 1.5rem;">Phần 3 · Kỹ thuật Prompting</span>
+          <h2 style="font-size: clamp(2rem, 4.5vw, 3.5rem); margin-bottom: 2rem;">Single-shot · Few-shot · JSON-only.</h2>
+          <div class="quote" style="font-size: 1.3rem; line-height: 1.6; padding: 2.5rem; border-left-width: 6px; border-radius: 16px;"><span class="k" style="font-weight: bold;">SYSTEM</span> Vietnamese transaction categorizer → exactly one of:
   Food, Transport, Shopping, Bills, Entertainment, Health, …
   Respond ONLY JSON: [{"idx": int, "category": "&lt;Category&gt;", "confidence": "high|low"}]
 
-<span class="s">FEW-SHOT</span>  1. HIGHLANDS COFFEE BUI VIEN | -65000 → Food / high
+<span class="s" style="font-weight: bold;">FEW-SHOT</span>  1. HIGHLANDS COFFEE BUI VIEN | -65000 → Food / high
   2. SALARY JUNE 2026 | 28000000 → Salary / high
           </div>
-          <p class="codecap">Batch 10 dòng/lần gọi · System prompt + Few-shot tách riêng để tận dụng tính năng <span class="amber">Prompt-Cache của Bedrock</span>, tiết kiệm tối đa token.</p>
+          <p class="codecap" style="font-size: 1.2rem; margin-top: 2rem; text-align: center; line-height: 1.5;">Batch 10 dòng/lần gọi · System prompt + Few-shot tách riêng để tận dụng tính năng <b class="amber" style="font-size: 1.3rem;">Prompt-Cache của Bedrock</b>, tiết kiệm tối đa token.</p>
         </div>
       </section>
 
       <!-- 20 · COST INSTRUMENTATION -->
       <section>
         <div class="slide-pad center">
-          <span class="kicker">Phần 3 · Chi phí AI</span>
-          <h2 style="font-size:1.35rem">Cost cực thấp</h2>
-          <div class="bars" style="max-width:100%; margin-top:.9rem">
-            <div class="bar-row"><span>Keyword $0</span><span class="track"><span class="fill" style="width:65%; background:var(--income)"></span></span><span class="val income">65% rows · offline</span></div>
-            <div class="bar-row"><span>Bedrock Haiku</span><span class="track"><span class="fill" style="width:35%"></span></span><span class="val">35% rows · ~$0.017/1k</span></div>
-            <div class="bar-row"><span>Prompt cache</span><span class="track"><span class="fill" style="width:22%; background:var(--amber)"></span></span><span class="val">system + few-shot reused</span></div>
+          <span class="kicker" style="font-size: 1.2rem; margin-bottom: 1.5rem;">Phần 3 · Chi phí AI</span>
+          <h2 style="font-size: clamp(2.2rem, 5vw, 3.8rem); margin-bottom: 2rem;">Cost cực thấp</h2>
+          <div class="bars" style="max-width:100%; margin-top: 1rem; gap: 1.8rem;">
+            <div class="bar-row" style="font-size: 1.3rem; grid-template-columns: 14rem 1fr auto;"><span style="font-weight: bold;">Keyword $0</span><span class="track" style="height: 32px;"><span class="fill" style="width:65%; background:var(--income)"></span></span><span class="val income">65% rows · offline</span></div>
+            <div class="bar-row" style="font-size: 1.3rem; grid-template-columns: 14rem 1fr auto;"><span style="font-weight: bold;">Bedrock Haiku</span><span class="track" style="height: 32px;"><span class="fill" style="width:35%"></span></span><span class="val">35% rows · ~$0.017/1k</span></div>
+            <div class="bar-row" style="font-size: 1.3rem; grid-template-columns: 14rem 1fr auto;"><span style="font-weight: bold;">Prompt cache</span><span class="track" style="height: 32px;"><span class="fill" style="width:22%; background:var(--amber)"></span></span><span class="val">system + few-shot reused</span></div>
           </div>
-          <div class="band" style="margin-top:1.3rem">
-            <span>Đo thật: token + USD/flow → <b class="mono">CloudWatch BudgetBot/W7</b></span>
-            <span>Surface: <b class="mono">/admin/cost-report</b></span>
+          <div class="band" style="margin-top: 3rem; font-size: 1.2rem; gap: 3rem; justify-content: center;">
+            <span>Đo thật: token + USD/flow → <b class="mono" style="color: var(--accent);">CloudWatch BudgetBot/W7</b></span>
+            <span>Surface: <b class="mono" style="color: var(--accent);">/admin/cost-report</b></span>
           </div>
-          <p class="muted sm" style="margin-top:.8rem">Cost-aware từ ngày 0 — quản trị hoàn toàn chi phí của từng model.</p>
+          <p class="muted" style="margin-top: 2rem; font-size: 1.3rem; text-align: center;">Cost-aware từ ngày 0 — quản trị hoàn toàn chi phí của từng model.</p>
         </div>
       </section>
 
@@ -974,61 +974,49 @@
       <!-- 15 · THE NUMBERS (THÀNH QUẢ) -->
       <section>
         <div class="slide-pad center">
-          <span class="kicker">Thành quả kỹ thuật</span>
-          <div class="stat-grid">
-            <div class="stat"><div class="num">4,803</div><div class="lbl">LOC backend (src/)</div><div class="sub">+1,313 LOC test</div></div>
-            <div class="stat"><div class="num">118<span class="muted" style="font-size:.5em"> / 78%</span></div><div class="lbl">tests pass · coverage</div><div class="sub">Store-parity test</div></div>
-            <div class="stat"><div class="num">92%</div><div class="lbl">AI Accuracy</div><div class="sub">đã test trên 1,000+ giao dịch thật</div></div>
-            <div class="stat"><div class="num">20</div><div class="lbl">Terraform files</div><div class="sub">Deploy 1-click lên AWS</div></div>
+          <span class="kicker" style="font-size: 1.2rem; margin-bottom: 2rem;">Thành quả kỹ thuật</span>
+          <div class="stat-grid" style="gap: 1.5rem;">
+            <div class="stat" style="padding: 2.5rem 1.5rem; border-width: 2px;"><div class="num" style="font-size: clamp(2rem, 4vw, 3.5rem);">4,803</div><div class="lbl" style="font-size: 1.2rem; margin-top: 1rem;">LOC backend (src/)</div><div class="sub" style="font-size: 0.9rem; margin-top: 0.5rem;">+1,313 LOC test</div></div>
+            <div class="stat" style="padding: 2.5rem 1.5rem; border-width: 2px;"><div class="num" style="font-size: clamp(2rem, 4vw, 3.5rem);">118<span class="muted" style="font-size:.5em"> / 78%</span></div><div class="lbl" style="font-size: 1.2rem; margin-top: 1rem;">tests pass · coverage</div><div class="sub" style="font-size: 0.9rem; margin-top: 0.5rem;">Store-parity test</div></div>
+            <div class="stat" style="padding: 2.5rem 1.5rem; border-width: 2px;"><div class="num" style="font-size: clamp(2rem, 4vw, 3.5rem);">92%</div><div class="lbl" style="font-size: 1.2rem; margin-top: 1rem;">AI Accuracy</div><div class="sub" style="font-size: 0.9rem; margin-top: 0.5rem;">đã test trên 1,000+ giao dịch thật</div></div>
+            <div class="stat" style="padding: 2.5rem 1.5rem; border-width: 2px;"><div class="num" style="font-size: clamp(2rem, 4vw, 3.5rem);">20</div><div class="lbl" style="font-size: 1.2rem; margin-top: 1rem;">Terraform files</div><div class="sub" style="font-size: 0.9rem; margin-top: 0.5rem;">Deploy 1-click lên AWS</div></div>
           </div>
-          <p class="muted sm" style="margin-top:1.5rem">Đây không phải là một "vỏ" hackathon. Đây là một hệ thống <b>Production-ready</b> với đầy đủ IaC, Test coverage và Monitor.</p>
+          <p class="muted" style="margin-top:2.5rem; font-size: 1.3rem; max-width: 100%; text-align: center;">Đây không phải là một "vỏ" hackathon. Đây là một hệ thống <b style="color: var(--income);">Production-ready</b> với đầy đủ IaC, Test coverage và Monitor.</p>
         </div>
       </section>
 
       <!-- 16 · TESTING & QUALITY -->
       <section>
         <div class="slide-pad center">
-          <span class="kicker">Quality</span>
-          <h2 style="font-size:1.3rem; margin-bottom:.8rem">Build nhanh ≠ build ẩu.</h2>
-          <div class="cols cols-3">
-            <div class="card">
-              <div class="lead">118</div>
-              <h3>tests pass</h3>
-              <p>1,313 LOC test · 78% coverage · 11 skip (cần AWS).</p>
+          <span class="kicker" style="font-size: 1.2rem; margin-bottom: 1.5rem;">Quality</span>
+          <h2 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 2rem;">Build nhanh ≠ build ẩu.</h2>
+          <div class="cols cols-3" style="gap: 1.5rem;">
+            <div class="card" style="padding: 2rem; border-width: 2px;">
+              <div class="lead" style="font-size: 2.5rem; margin-bottom: 1rem;">118</div>
+              <h3 style="font-size: 1.5rem; margin-bottom: 0.8rem;">tests pass</h3>
+              <p style="font-size: 1.1rem; line-height: 1.5;">1,313 LOC test · 78% coverage<br/>11 skip (cần AWS).</p>
             </div>
-            <div class="card">
-              <div class="lead">5×</div>
-              <h3>store-parity</h3>
-              <p>Cùng một bộ test chạy qua <b>cả 5 DB adapters</b> — interface giống nhau được chứng minh.</p>
+            <div class="card" style="padding: 2rem; border-width: 2px;">
+              <div class="lead" style="font-size: 2.5rem; margin-bottom: 1rem;">5×</div>
+              <h3 style="font-size: 1.5rem; margin-bottom: 0.8rem;">store-parity</h3>
+              <p style="font-size: 1.1rem; line-height: 1.5;">Cùng một bộ test chạy qua <b>cả 5 DB adapters</b> — interface giống nhau được chứng minh.</p>
             </div>
-            <div class="card">
-              <div class="lead">Safe</div>
-              <h3>Pydantic Models</h3>
-              <p>Ép kiểu dữ liệu (Data Validation) nghiêm ngặt ở cả đầu vào API và đầu ra của AI.</p>
+            <div class="card" style="padding: 2rem; border-width: 2px;">
+              <div class="lead" style="font-size: 2.5rem; margin-bottom: 1rem;">Safe</div>
+              <h3 style="font-size: 1.5rem; margin-bottom: 0.8rem;">Pydantic Models</h3>
+              <p style="font-size: 1.1rem; line-height: 1.5;">Ép kiểu dữ liệu (Data Validation) nghiêm ngặt ở cả đầu vào API và đầu ra của AI.</p>
             </div>
           </div>
-          <p class="muted sm" style="margin-top:1rem">Test ép backend local (SQLite/LocalAI) — chạy offline, không chạm AWS, không tốn tiền.</p>
-        </div>
-      </section>
-
-      <!-- 21 · LESSON 1 -->
-      <section>
-        <div class="slide-pad center">
-          <span class="kicker">Phần 4 · Tầm nhìn</span>
-          <h2 style="font-size:clamp(1.7rem,4.2vw,3.2rem)">Triết lý 1: AI ẩn là<br/><span class="income">AI tốt.</span></h2>
-          <p class="muted" style="margin-top:1.2rem; max-width:44ch">
-            Công nghệ xịn là công nghệ giải quyết được vấn đề mà user không phải học cách dùng (không cần biết prompt là gì).<br/><br/>
-            <b style="color:var(--income)">Federated Learning Mindset:</b> Dữ liệu tài chính nhạy cảm tuyệt đối không rời khỏi thiết bị người dùng.
-          </p>
+          <p class="muted" style="margin-top:2.5rem; font-size: 1.2rem; text-align: center;">Test ép backend local (SQLite/LocalAI) — chạy offline, không chạm AWS, không tốn tiền.</p>
         </div>
       </section>
 
       <!-- 22 · HERO QUOTE -->
       <section data-background-color="#131F38">
         <div class="slide-pad center">
-          <span class="kicker" style="color:var(--muted)">Triết lý 2</span>
-          <p class="hero-q">You don't need <span class="muted">agentic AI</span><br/>to build something people use.<br/><br/>Solve the <em>right</em> pain · with the <em>right</em> model · at the <em>right</em> cost.
-            <span class="sig">— Group 4</span></p>
+          <span class="kicker" style="color:var(--accent); font-size: 1.2rem;">Phần 4 · Tầm nhìn</span>
+          <p class="hero-q" style="font-size: clamp(2rem, 5vw, 4rem); line-height: 1.3; max-width: 100%;">You don't need <span class="muted">agentic AI</span><br/>to build something people use.<br/><br/>Solve the <em>right</em> pain · with the <em>right</em> model · at the <em>right</em> cost.
+            <span class="sig" style="font-size: 1.5rem; margin-top: 2.5rem;">— Group 4</span></p>
         </div>
       </section>
 
